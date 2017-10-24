@@ -5,20 +5,21 @@ class Show < ActiveRecord::Base
 
   def self.most_popular_show
     Show.where(rating: highest_rating).first
-  end 
+  end
 
   def self.lowest_rating
     Show.minimum(:rating)
-  end 
+  end
 
   def self.least_popular_show
-    Show.where(rating: least_popular_show).first 
-  end 
+    Show.where(rating: least_popular_show).first
+  end
 
   def self.popular_shows
     Show.where(rating: highest_rating)
-  end 
+  end
 
   def self.shows_by_alphabetical_order
     Show.order(title: :desc)
+  end 
 end
